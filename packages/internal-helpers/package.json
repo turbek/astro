@@ -32,7 +32,7 @@
     "dev": "astro-scripts dev \"src/**/*.ts\""
   },
   "devDependencies": {
-    "astro-scripts": "workspace:*"
+    "astro-scripts": "0.0.14"
   },
   "keywords": [
     "astro",
