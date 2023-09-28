@@ -8,7 +8,7 @@ type State = {
 	scrollY: number;
 	intraPage?: boolean;
 };
-type Events = 'astro:page-load' | 'astro:after-swap';
+type Events = 'astro:page-load' | 'astro:before-swap' | 'astro:after-swap';
 
 // only update history entries that are managed by us
 // leave other entries alone and do not accidently add state.
@@ -218,6 +218,8 @@ async function updateDOM(
 	};
 
 	const swap = () => {
+		triggerEvent('astro:before-swap');
+
 		// swap attributes of the html element
 		// - delete all attributes from the current document
 		// - insert all attributes from doc
